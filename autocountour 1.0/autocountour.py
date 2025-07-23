@@ -227,7 +227,7 @@ class Autocountour:
             raise RuntimeError("Не вдалося отримати шар з векторного файлу!")
 
         print("Запускаємо Polygonize...")
-        gdal.Polygonize(band, None, vector_layer, 0, [], callback=None)
+        gdal.Polygonize(band, None, vector_layer, -1, [], callback=None) #change 0 to -1 if dont work
 
         # Закриваємо растровий датасет
         dataset = None
